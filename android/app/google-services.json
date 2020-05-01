@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "144009700538",
+    "firebase_url": "https://health24-ac363.firebaseio.com",
+    "project_id": "health24-ac363",
+    "storage_bucket": "health24-ac363.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144009700538:android:a8a9633e6746a1f6e90e83",
+        "android_client_info": {
+          "package_name": "com.health24.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144009700538-o9392esl28qqkroqqi2qf4iqhgrl1l1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYfJn3KbXKmY2I5XKCE_z5N4M6WqqrT6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144009700538-6n7m70hphdjpcpl5bpclbc565as45t3v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "144009700538-arru9cles392ecqhu4u9ci0996jh6b72.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.health24.ios"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144009700538:android:466c37aa1275710ee90e83",
+        "android_client_info": {
+          "package_name": "com.health24Patients.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144009700538-o9392esl28qqkroqqi2qf4iqhgrl1l1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYfJn3KbXKmY2I5XKCE_z5N4M6WqqrT6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144009700538-6n7m70hphdjpcpl5bpclbc565as45t3v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "144009700538-arru9cles392ecqhu4u9ci0996jh6b72.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.health24.ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
