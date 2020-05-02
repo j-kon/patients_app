@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_map_booking/Blocs/account_bloc.dart';
 import 'package:flutter_map_booking/Blocs/med_trips_bloc.dart';
+import 'package:flutter_map_booking/Blocs/request_state_bloc.dart';
 import 'package:flutter_map_booking/Networking/account_api_provider.dart';
 import 'package:flutter_map_booking/Networking/auth_api_provider.dart';
 import 'package:flutter_map_booking/Blocs/place_bloc.dart';
@@ -216,7 +217,6 @@ class _HomeScreen2State extends State<HomeScreen2> {
   }
 
   /// Widget change the radius Circle.
-
   Widget getListOptionDistance() {
     final List<Widget> choiceChips = listDistance.map<Widget>((value) {
       return new Padding(
@@ -248,7 +248,6 @@ class _HomeScreen2State extends State<HomeScreen2> {
   ///Filter and display markers in that area
   ///My data is demo. You can get data from your api and use my function
   ///to filter and display markers around the current location.
-
   changeCircle(String selectedCircle){
     if(selectedCircle == "1"){
       setState(() {
@@ -387,17 +386,24 @@ class _HomeScreen2State extends State<HomeScreen2> {
                           child: bloc.tripInProgress==true?MedTripCard(
                               trip:bloc.currentTrip,
                             bloc: bloc,
-                          ):RaisedButton(
-                            onPressed: (){
-                              RequestApiProvider().makeRequest();
+                          ):Consumer<RequestStateBloc>(
+                            builder: (context,bloc,child){
+                              String requestId = "homePageMakeRequestButton";
+                              return RaisedButton(
+                                onPressed: (){
+                                  if(bloc.checkStatus(requestId: requestId)!=RequestStatus.SUCCESSFUL){
+                                    bloc.makeRequest(requestId: requestId);
+                                  }
+                                },
+                                color: bloc.checkStatus(requestId: requestId)==RequestStatus.FAILED?Colors.red:Colors.blueAccent,
+                                child: Text(
+                                  bloc.checkStatus(requestId: requestId)==RequestStatus.SUCCESSFUL?"WAITING FOR DOCTORS RESPONSE":bloc.checkStatus(requestId: requestId)==RequestStatus.PENDING?"MAKE REUEST":"EEROR MAKING REQUEST. TRY AGAIN",
+                                  style: TextStyle(
+                                      color: Colors.white
+                                  ),
+                                ),
+                              );
                             },
-                            color: Colors.blueAccent,
-                            child: Text(
-                              "MAKE REQUEST",
-                              style: TextStyle(
-                                  color: Colors.white
-                              ),
-                            ),
                           ),
                         ),
                       )
