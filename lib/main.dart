@@ -1,5 +1,6 @@
 import 'package:flutter_map_booking/Blocs/auth_bloc.dart';
 import 'package:flutter_map_booking/Blocs/med_trips_bloc.dart';
+import 'package:flutter_map_booking/Blocs/request_state_bloc.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
 import 'Blocs/place_bloc.dart';
@@ -14,7 +15,8 @@ void main() => runApp(
       providers: [
         ChangeNotifierProvider(create: (context)=>AuthBloc()),
         ChangeNotifierProvider(create: (context)=>MedTripsBloc()),
-        ChangeNotifierProvider(create: (context)=>PlaceBloc())
+        ChangeNotifierProvider(create: (context)=>PlaceBloc()),
+        ChangeNotifierProvider(create: (context)=>RequestStateBloc())
       ],
       child: MyApp(),
     ),
