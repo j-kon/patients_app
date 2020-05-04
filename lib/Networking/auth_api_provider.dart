@@ -38,7 +38,7 @@ class AuthApiProvider {
         return AuthApiResponse.fromJson(json.decode(response.body));
       } else {
         return AuthApiResponse(
-            success: false, message: "Error rigistering you");
+            success: false, message: "Error registering you");
       }
     } catch (err) {
       return AuthApiResponse(success: false, message: "No internet connection");
